@@ -1,22 +1,17 @@
-主要属性：：
-**animating** 是否显示指示器 默认是true
-**color**     指示器颜色
-**size**      指示器大小 small，large
-
+/*
+ 主要属性：：
+ **animating** 是否显示指示器 默认是true
+ **color**     指示器颜色
+ **size**      指示器大小 small，large
+ */
 
 /**
  * Created by gaocai on 16/9/7.
  */
 import React, {Component} from 'react';
-import {
-    AppRegistry,
-    View,
-    ActivityIndicator,
-    Text,
-} from 'react-native';
+import {View, Text, ActivityIndicator} from 'react-native';
 
 class ActivityindicatorG extends Component {
-
 
     // 构造
     constructor(props) {
