@@ -40,5 +40,5 @@ buck-out/
 android/app/libs
 android/keystores/debug.keystore
 
-android/
-ios/
+/ios/build/
+/android/app/
