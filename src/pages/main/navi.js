@@ -1,12 +1,13 @@
 'use strict'
 
 import React, {Component} from 'react';
-import {Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 
 import TabNavigator from 'react-native-tab-navigator';
 const TabNavigatorItem = TabNavigator.Item;
 
 import MessagePage from './messages';
+import DingPage from './ding';
 import WorkPage from './work';
 import ContactsPage from './contacts';
 import MinePage from './mine';
@@ -15,22 +16,24 @@ const styles = StyleSheet.create({
     title: {color: '#000000'},
     selectedTitle: {color: '#999'},
     selectedIcon: {
-        width: 26,
-        height: 26,
+        width: 20,
+        height: 20,
         alignSelf: 'center',
         borderWidth: 0,
         borderRadius: 0,
         overflow: 'hidden'
     },
     icon: {
-        width: 24,
-        height: 24,
+        width: 20,
+        height: 20,
         alignSelf: 'center',
         borderWidth: 0,
         borderRadius: 0,
         overflow: 'hidden'
     },
-    tabNav: {},
+    tabNav: {
+        height: 48
+    },
     tabNavHide: {
         opacity: 0,
         zIndex: 0,
@@ -48,23 +51,26 @@ var barTabItems = {
             icon: require('../../../assets/img/msg_64x64.png'),
             selectedIcon: require('../../../assets/img/msg_blue_64x64.png'),
             tabPageClass: MessagePage,
-            tabPageProps: []
+            tabPageProps: [],
+            eventCount: 0
         },
-        // {
-        //     tabId: 'ding',
-        //     title: 'DING',
-        //     icon: require('../../../assets/img/ding_64x64.png'),
-        //     selectedIcon: require('../../../assets/img/ding_blue_64x64.png'),
-        //     tabPageClass: MessagePage,
-        //     tabPageProps: []
-        // },
+        {
+            tabId: 'ding',
+            title: 'DING',
+            icon: require('../../../assets/img/ding_64x64.png'),
+            selectedIcon: require('../../../assets/img/ding_blue_64x64.png'),
+            tabPageClass: DingPage,
+            tabPageProps: [],
+            eventCount: 1
+        },
         {
             tabId: 'work',
             title: '工作',
             icon: require('../../../assets/img/work_64x64.png'),
             selectedIcon: require('../../../assets/img/work_blue_64x64.png'),
             tabPageClass: WorkPage,
-            tabPageProps: [{naviBarHeight: 50}]
+            tabPageProps: [{naviBarHeight: 50}],
+            eventCount: 0
         },
         {
             tabId: 'contacts',
@@ -72,7 +78,8 @@ var barTabItems = {
             icon: require('../../../assets/img/contacts_64x64.png'),
             selectedIcon: require('../../../assets/img/contacts_blue_64x64.png'),
             tabPageClass: ContactsPage,
-            tabPageProps: []
+            tabPageProps: [],
+            eventCount: 0
         },
         {
             tabId: 'mine',
@@ -80,7 +87,8 @@ var barTabItems = {
             icon: require('../../../assets/img/mine_64x64.png'),
             selectedIcon: require('../../../assets/img/mine_blue_64x64.png'),
             tabPageClass: MinePage,
-            tabPageProps: []
+            tabPageProps: [],
+            eventCount: 0
         }
     ]
 };
@@ -99,6 +107,46 @@ class BottomNaviPage extends Component {
         this.setState({tabBarShow: true});
     }
 
+    _getIcon(tabItem) {
+        let source, style;
+        if (this.state.selectedTab === tabItem.tabId) {
+            source = tabItem.selectedIcon;
+            style = styles.selectedIcon;
+        } else {
+            source = tabItem.icon;
+            style = styles.icon;
+        }
+        let eventText, eventOpacity = 0, eventWidth = 12, eventCount = tabItem.eventCount;
+        if (eventCount > 0) {
+            eventText = tabItem.eventCount > 99 ? '99' : eventCount + '';
+            eventOpacity = 1;
+            if (eventCount > 9)
+                eventWidth = 14;
+        }
+        return <View style={{
+            width: 40,
+            height: 32,
+            flexDirection: 'column',
+            justifyContent: 'flex-start'
+        }}>
+            <View style={{
+                alignSelf: 'flex-end',
+                backgroundColor: 'red',
+                width: eventWidth,
+                height: 12,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 6,
+                opacity: eventOpacity
+            }}>
+                <Text style={{color: '#FFF', fontSize: 7, fontWeight: 'bold'}}>
+                    {eventText}
+                </Text>
+            </View>
+            <Image source={source} style={style}/>
+        </View>;
+    }
+
     _getItems() {
         return barTabItems.items.map((tabItem)=> {
             let key = tabItem.tabId;
@@ -110,8 +158,8 @@ class BottomNaviPage extends Component {
             let title = tabItem.title;
             let selected = this.state.selectedTab === tabItem.tabId;
             let onPress = () => this.setState({selectedTab: tabItem.tabId});
-            let renderIcon = () => <Image source={tabItem.icon} style={styles.icon}/>;
-            let renderSelectedIcon = () => <Image source={tabItem.selectedIcon} style={styles.selectedIcon}/>;
+            let renderIcon = () => this._getIcon(tabItem);
+            let renderSelectedIcon = () => this._getIcon(tabItem);
             let TabPageClass = tabItem.tabPageClass;
             return (
                 <TabNavigatorItem

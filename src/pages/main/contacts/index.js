@@ -28,33 +28,15 @@ var styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderColor: '#ccc'
     },
-    searchRow: {
+    sectionSearch: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
         height: 40,
         borderBottomWidth: 1,
-        borderBottomColor: '#cccccc'
-    },
-    searchContent: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignSelf: 'center',
-        backgroundColor: '#cccccc',
-        width: 360,
-        height: 24,
-        borderRadius: 12,
-        opacity: .5
-    },
-    searchText: {
-        backgroundColor: '#cccccc',
-        borderColor: 'white',
-        borderRadius: 3,
-        borderWidth: 1,
-        height: 30,
-        paddingLeft: 8,
+        borderBottomColor: '#cccccc',
+        backgroundColor:'#FFF'
     },
     sectionCatalog: {height: 180},
     sectionOrganization: {height: 45},
@@ -71,12 +53,23 @@ var styles = StyleSheet.create({
 
 class SectionSearch extends Component {
     render() {
+        let contentStyle = {
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignSelf: 'center',
+            backgroundColor: '#cccccc',
+            width: 360,
+            height: 24,
+            borderRadius: 12,
+            opacity: .5
+        };
         return (
-            <View style={styles.searchRow}>
+            <View style={styles.sectionSearch}>
                 <TouchableOpacity onPress={() => {
                     Alert.alert('点击了查询');
                 }}>
-                    <View style={styles.searchContent}>
+                    <View style={contentStyle}>
                         <Image style={{width: 12, height: 12}}
                                source={require('../../../../assets/img/search_50x50.png')}/>
                         <Text style={{fontSize: 12}}>{"  找人"}</Text>
