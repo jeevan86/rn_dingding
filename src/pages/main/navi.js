@@ -8,6 +8,7 @@ const TabNavigatorItem = TabNavigator.Item;
 
 import MessagePage from './messages';
 import WorkPage from './work';
+import ContactsPage from './contacts';
 import MinePage from './mine';
 
 const styles = StyleSheet.create({
@@ -49,14 +50,14 @@ var barTabItems = {
             tabPageClass: MessagePage,
             tabPageProps: []
         },
-        {
-            tabId: 'ding',
-            title: 'DING',
-            icon: require('../../../assets/img/ding_64x64.png'),
-            selectedIcon: require('../../../assets/img/ding_blue_64x64.png'),
-            tabPageClass: MessagePage,
-            tabPageProps: []
-        },
+        // {
+        //     tabId: 'ding',
+        //     title: 'DING',
+        //     icon: require('../../../assets/img/ding_64x64.png'),
+        //     selectedIcon: require('../../../assets/img/ding_blue_64x64.png'),
+        //     tabPageClass: MessagePage,
+        //     tabPageProps: []
+        // },
         {
             tabId: 'work',
             title: '工作',
@@ -70,7 +71,7 @@ var barTabItems = {
             title: '联系人',
             icon: require('../../../assets/img/contacts_64x64.png'),
             selectedIcon: require('../../../assets/img/contacts_blue_64x64.png'),
-            tabPageClass: MessagePage,
+            tabPageClass: ContactsPage,
             tabPageProps: []
         },
         {

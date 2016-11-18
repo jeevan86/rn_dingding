@@ -93,25 +93,16 @@ var NavigationBarRouteMapper = {
     },
     // 标题
     Title(route, navigator, index, navState) {
-        if (index > 0) {
-            return (
-                <View style={[{width: 30}, styles.naviBarItem]}>
-                    <Text style={{fontSize: 16, color: '#555555'}}>
-                        {route.title}
-                    </Text>
-                </View>
-            );
-        }
-        else {
-            return (
-                <View style={[{width: 40}, styles.naviBarItem]}>
-                    <TouchableOpacity onPress={() => Alert.alert("点击了钉钉")}>
-                        <Text style={{fontSize: 18, color: '#555555'}}>
-                            {"钉钉"}
-                        </Text>
-                    </TouchableOpacity>
-                </View>);
-        }
+        let titleStyle = [{width: 200}, styles.naviBarItem];
+        let titleTextStyle = {fontSize: 14, color: '#555555'};
+        let title = route.title;
+        return (
+            <View style={titleStyle}>
+                <TouchableOpacity onPress={() => Alert.alert("点击了钉钉")}>
+                    <Text style={titleTextStyle}>{title}</Text>
+                </TouchableOpacity>
+            </View>
+        );
     }
 };
 
@@ -132,7 +123,7 @@ class MessagePage extends Component {
             name: 'MessageList',
             index: 0,
             component: MessageList,
-            title: ''
+            title: '钉钉'
         };
         return (
             <Navigator initialRoute={initialRoute}
