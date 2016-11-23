@@ -11,15 +11,8 @@ const itemWidth = 48, iconWidth = 24;
 const styles = StyleSheet.create({
     title: {color: '#000000'},
     selectedTitle: {color: '#999'},
-    tabNav: {
-        height: naviBarHeight
-    },
-    tabNavHide: {
-        opacity: 0,
-        zIndex: 0,
-        width: 0,
-        height: 0
-    },
+    tabNav: {height: naviBarHeight},
+    tabNavHide: {opacity: 0, zIndex: 0, width: 0, height: 0},
     item: {width: itemWidth, height: 32},
     icon: {width: iconWidth, height: 24, overflow: 'hidden'},
     iconPos: {

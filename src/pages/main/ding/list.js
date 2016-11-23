@@ -69,11 +69,7 @@ export default class DingList extends Component {
     }
 
     componentDidMount() {
-        // let dingData = dingService.getDingData();
-        // this.setState({
-        //     dingData: dingData,
-        //     dataSource: this._createData(dingData)
-        // });
+        this._onRefresh();
     }
 
     _createData(array) {
