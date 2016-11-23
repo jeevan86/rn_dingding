@@ -27,7 +27,7 @@ class HeaderItem extends Component {
     }
 }
 
-class Header extends Component {
+export default class Header extends Component {
     render() {
         let style = this.props.style;
         let headerHeight = style.height;
@@ -48,5 +48,3 @@ class Header extends Component {
         );
     }
 }
-
-module.exports = Header;

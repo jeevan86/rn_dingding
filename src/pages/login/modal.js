@@ -3,7 +3,7 @@
 import React, {Component} from 'react';
 import {Modal, Text, TouchableHighlight, View} from 'react-native';
 
-class ModalPage extends Component {
+export default class ModalPage extends Component {
 
     constructor(props) {
         super(props);
@@ -50,4 +50,3 @@ class ModalPage extends Component {
     }
 }
 
-module.exports = ModalPage;

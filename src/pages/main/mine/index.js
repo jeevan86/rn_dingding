@@ -257,7 +257,7 @@ class ItemList extends Component {
     }
 }
 
-class MinePage extends Component {
+export default class MinePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -324,5 +324,3 @@ class MinePage extends Component {
                           renderScene={this._renderScene()} navigationBar={this._navigationBar()}/>;
     }
 }
-
-module.exports = MinePage;

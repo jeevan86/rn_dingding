@@ -235,7 +235,7 @@ class ItemList extends Component {
     }
 }
 
-class ContactsPage extends Component {
+export default class ContactsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -305,4 +305,3 @@ class ContactsPage extends Component {
     }
 }
 
-module.exports = ContactsPage;

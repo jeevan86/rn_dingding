@@ -15,7 +15,7 @@ var styles = StyleSheet.create({
     }
 });
 
-class More extends Component {
+export default class More extends Component {
     render() {
         return (
             <View style={[this.props.style, styles.moreContent]}>
@@ -30,5 +30,3 @@ class More extends Component {
         );
     }
 }
-
-module.exports = More

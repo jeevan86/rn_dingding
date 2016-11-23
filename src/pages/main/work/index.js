@@ -58,7 +58,7 @@ class WorkAppList extends Component {
     }
 }
 
-class WorkPage extends Component {
+export default class WorkPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -133,5 +133,3 @@ class WorkPage extends Component {
                           renderScene={this._renderScene()} navigationBar={this._navigationBar()}/>;
     }
 }
-
-module.exports = WorkPage;

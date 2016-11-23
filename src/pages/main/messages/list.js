@@ -12,6 +12,10 @@ import {
     TouchableOpacity
 } from 'react-native';
 
+import SearchBar from '../../../common/searchbar';
+
+import messageService from './service';
+
 var styles = StyleSheet.create({
     searchRow: {
         flexDirection: 'row',
@@ -21,25 +25,6 @@ var styles = StyleSheet.create({
         height: 40,
         borderBottomWidth: 1,
         borderBottomColor: '#cccccc'
-    },
-    searchContent: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignSelf: 'center',
-        backgroundColor: '#cccccc',
-        width: 360,
-        height: 24,
-        borderRadius: 12,
-        opacity: .5
-    },
-    searchText: {
-        backgroundColor: '#cccccc',
-        borderColor: 'white',
-        borderRadius: 3,
-        borderWidth: 1,
-        height: 30,
-        paddingLeft: 8,
     },
     itemRow: {
         flexDirection: 'row',
@@ -82,40 +67,9 @@ var styles = StyleSheet.create({
     }
 });
 
-var messageData = [
-    {
-        icon: require('../../../../assets/img/icon_newfriend.png'),
-        title: '新的朋友',
-        content: '新的好友推荐'
-    },
-    {
-        icon: require('../../../../assets/img/icon_dingxiaomi.png'),
-        title: '钉小秘',
-        content: '3.1版本功能介绍'
-    },
-    {
-        icon: require('../../../../assets/img/icon_jituanitsmomc.png'),
-        title: '支付宝安全-区块链技术',
-        content: '[tower任务] 安装Hadoop集群'
-    },
-    {
-        icon: require('../../../../assets/img/icon_quanyuanqun_itm.png'),
-        title: '全员群:支付宝安全',
-        content: '王争宇:[无聊]'
-    },
-    {
-        icon: require('../../../../assets/img/icon_dingdingfulishe.png'),
-        title: '钉钉福利社',
-        content: '感谢认真工作的你'
-    },
-    {
-        icon: require('../../../../assets/img/icon_dingdingphone.png'),
-        title: '钉钉电话',
-        content: '最近通话: 马金虎'
-    }
-];
+var messageData = messageService.getMessageData();
 
-class MessageList extends Component {
+export default class MessageList extends Component {
 
     constructor(props) {
         super(props);
@@ -162,40 +116,12 @@ class MessageList extends Component {
                     </View>
                 </TouchableOpacity>);
         } else {
-            return (
-                <View style={styles.searchRow}>
-                    <TouchableOpacity onPress={() => {
-                        self._pressRow(rowID);
-                        highlightRow(sectionID, rowID);
-                    }}>
-                        <View style={styles.searchContent}>
-                            <Image style={{width: 12, height: 12}}
-                                   source={require('../../../../assets/img/search_50x50.png')}/>
-                            <Text style={{fontSize: 12}}>{"  搜索"}</Text>
-                        </View>
-                    </TouchableOpacity>
-                </View>
-            );
+            return <SearchBar text={"搜索"}/>
         }
     }
 
     _renderRow(self, rowData, sectionID, rowID, highlightRow) {
-        return (
-            this._getItem(self, rowData, sectionID, rowID, highlightRow)
-        );
+        return this._getItem(self, rowData, sectionID, rowID, highlightRow);
     }
 
-    _renderSeperator(sectionID, rowID, adjacentRowHighlighted) {
-        return (
-            <View
-                key={`${sectionID}-${rowID}`}
-                style={{
-                    height: adjacentRowHighlighted ? 4 : 1,
-                    backgroundColor: adjacentRowHighlighted ? '#3B5998' : '#CCCCCC',
-                }}
-            />
-        );
-    }
 }
-
-module.exports = MessageList;

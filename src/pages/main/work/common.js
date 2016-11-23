@@ -57,7 +57,7 @@ class CommonItem extends Component {
     }
 }
 
-class Common extends Component {
+export default class Common extends Component {
     render() {
         return (
             <View style={[this.props.style, styles.commonContainer]}>
@@ -85,5 +85,3 @@ class Common extends Component {
         );
     }
 }
-
-module.exports = Common;

@@ -106,7 +106,7 @@ var NavigationBarRouteMapper = {
     }
 };
 
-class MessagePage extends Component {
+export default class MessagePage extends Component {
     /**
      * 构造器
      * @param props 属性
@@ -134,7 +134,7 @@ class MessagePage extends Component {
                            if (route.title.length === 0) this.state.navigationBarHeight = 0;
                            let Component = route.component;
                            return (<Component {...route.params}
-                                              style={{marginTop: navigationBarHeight}}
+                                              style={{marginTop: this.state.navigationBarHeight}}
                                               navigator={navigator}
                                               onForward={() => {
                                                   var nextIndex = route.index + 1;
@@ -154,12 +154,10 @@ class MessagePage extends Component {
                            <Navigator.NavigationBar
                                style={{
                                    backgroundColor: '#e1e1e1',
-                                   height: navigationBarHeight
+                                   height: this.state.navigationBarHeight
                                }}
                                routeMapper={NavigationBarRouteMapper}/>}
             />
         );
     }
 }
-
-module.exports = MessagePage;

@@ -39,11 +39,12 @@ var styles = StyleSheet.create({
     }
 });
 
-class DingPage extends Component {
+export default class DingPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            naviBarHeight: this.props.naviBarHeight || 50
+            naviBarHeight: this.props.naviBarHeight || 50,
+            ding_unconfirmed: this.props.ding_unconfirmed
         };
     }
 
@@ -52,7 +53,8 @@ class DingPage extends Component {
             name: 'DingList',
             index: 0,
             component: DingList,
-            title: DingList.title
+            title: DingList.title,
+            passProps: {ding_unconfirmed: this.props.ding_unconfirmed, onRefresh : this.props.onRefresh}
         };
     }
 
@@ -78,7 +80,7 @@ class DingPage extends Component {
         let style = {backgroundColor: '#FFF', marginTop: this.state.naviBarHeight};
         return (route, navigator) => {
             let Component = route.component;
-            return <Component {...route.params}
+            return <Component {...route.passProps}
                               style={style}
                               navigator={navigator}
                               onForward={() => {
@@ -119,5 +121,3 @@ class DingPage extends Component {
                           renderScene={this._renderScene()} navigationBar={this._navigationBar()}/>;
     }
 }
-
-module.exports = DingPage;

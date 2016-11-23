@@ -9,40 +9,14 @@ import {
     RecyclerViewBackedScrollView,
     Text,
     View,
-    TouchableOpacity
+    TouchableOpacity,
+    RefreshControl
 } from 'react-native';
 
 import SearchBar from '../../../common/searchbar';
+import dingService from './service';
 
 var styles = StyleSheet.create({
-    searchRow: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignSelf: 'center',
-        height: 40,
-        borderBottomWidth: 1,
-        borderBottomColor: '#cccccc'
-    },
-    searchContent: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignSelf: 'center',
-        backgroundColor: '#cccccc',
-        width: 360,
-        height: 24,
-        borderRadius: 12,
-        opacity: .5
-    },
-    searchText: {
-        backgroundColor: '#cccccc',
-        borderColor: 'white',
-        borderRadius: 3,
-        borderWidth: 1,
-        height: 30,
-        paddingLeft: 8,
-    },
     itemRow: {
         flexDirection: 'row',
         justifyContent: 'center',
@@ -84,60 +58,75 @@ var styles = StyleSheet.create({
     }
 });
 
-var dingData = [
-    {
-        icon: require('../../../../assets/img/icon_newfriend.png'),
-        title: '新的朋友',
-        content: '新的好友推荐'
-    },
-    {
-        icon: require('../../../../assets/img/icon_dingxiaomi.png'),
-        title: '钉小秘',
-        content: '3.1版本功能介绍'
-    },
-    {
-        icon: require('../../../../assets/img/icon_jituanitsmomc.png'),
-        title: '支付宝安全-区块链技术',
-        content: '[tower任务] 安装Hadoop集群'
-    },
-    {
-        icon: require('../../../../assets/img/icon_quanyuanqun_itm.png'),
-        title: '全员群:支付宝安全',
-        content: '王争宇:[无聊]'
-    },
-    {
-        icon: require('../../../../assets/img/icon_dingdingfulishe.png'),
-        title: '钉钉福利社',
-        content: '感谢认真工作的你'
-    },
-    {
-        icon: require('../../../../assets/img/icon_dingdingphone.png'),
-        title: '钉钉电话',
-        content: '最近通话: 马金虎最近通话: 马金虎最近通话: 马金虎最近通话: 马金虎最近通话: 马金虎最近通话: 马金虎最近通话: 马金虎最近通话: 马金虎最近通话: 马金虎最近通话: 马金虎最近通话: 马金虎'
-    }
-];
+var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
-class DingList extends Component {
+export default class DingList extends Component {
 
     static title = '全部';
 
     constructor(props) {
         super(props);
-        var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            dataSource: ds.cloneWithRows(dingData)
+            dingData: [],
+            dataSource: this._createData([]),
+            isRefreshing: false
         };
     }
 
+    componentDidMount() {
+        // let dingData = dingService.getDingData();
+        // this.setState({
+        //     dingData: dingData,
+        //     dataSource: this._createData(dingData)
+        // });
+    }
+
+    _createData(array) {
+        let dataArray = [{}, {}]
+        return ds.cloneWithRows(dataArray.concat(array));
+    }
+
     render() {
+        /*
+            In next release empty section headers will be rendered.
+          In this release you can user 'enableEmptySections' flag
+          to render empty section headers.
+            解决：找到node_modules下的react-native-gifted-listview，
+          在ListView下 加个 enableEmptySections = {true} 就可以解决了。
+         */
+        let enableEmptySections = true;
         return (
             <ListView style={[this.props.style]}
                       dataSource={this.state.dataSource}
+                      enableEmptySections={enableEmptySections}
                       renderRow={(rowData, sectionID, rowID, highlightRow) =>
                           this._renderRow(rowData, sectionID, rowID, highlightRow)
                       }
                       renderScrollComponent={props => <RecyclerViewBackedScrollView {...props} />}
+                      refreshControl={
+                          <RefreshControl
+                              refreshing={this.state.isRefreshing}
+                              onRefresh={() => this._onRefresh()}
+                              colors={['#ff0000', '#00ff00', '#0000ff', '#3ad564']}
+                              progressBackgroundColor="#ffffff"
+                          />
+                      }
             />);
+    }
+
+    _onRefresh() {
+        this.setState({isRefreshing: true});
+        setTimeout(() => {
+            var dingData = this.state.dingData.slice(0);
+            let newData = dingService.getDingData();
+            newData = newData.concat(dingData);
+            this.setState({
+                dingData: newData,
+                dataSource: this._createData(newData),
+                isRefreshing: false
+            });
+            this.props.onRefresh(newData);
+        }, 500);
     }
 
     _pressRow(rowID) {
@@ -150,11 +139,24 @@ class DingList extends Component {
                 <SearchBar text="搜索DING消息"/>
             );
         } else if (rowID == 1) {
+            let opacity, width, height, count
+            if (this.state.dingData.length && this.state.dingData.length > 0) {
+                width = 128;
+                height = 50;
+                opacity = 1;
+                count = this.state.dingData.length
+            } else {
+                width = 0;
+                height = 0;
+                opacity = 0;
+                count = 0;
+            }
             return (
                 <View style={[styles.itemRow, {
                     alignSelf: 'center',
-                    width: 128,
-                    height: 50
+                    width: width,
+                    height: height,
+                    opacity : opacity
                 }]}>
                     <TouchableOpacity style={{
                         width: 96,
@@ -171,7 +173,7 @@ class DingList extends Component {
                             color: '#FFF',
                             fontSize: 12,
                             fontWeight: 'bold'
-                        }}>{'4个未确认'}</Text>
+                        }}>{count + '个未确认'}</Text>
                     </TouchableOpacity>
                 </View>
             );
@@ -237,20 +239,3 @@ class DingList extends Component {
         );
     }
 }
-
-// class DingList extends Component {
-//     static title = '全部';
-//
-//     render() {
-//         return (
-//             <ScrollView contentInset={{top: 0}}
-//                         scrollsToTop={true}
-//                         showsVerticalScrollIndicator={true}
-//                         style={[styles.container, this.props.style]}>
-//                 <SearchBar text="搜索DING消息"/>
-//             </ScrollView>
-//         );
-//     }
-// }
-
-module.exports = DingList;

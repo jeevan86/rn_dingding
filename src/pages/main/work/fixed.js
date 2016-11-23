@@ -100,7 +100,7 @@ class FixedNumItem extends Component {
     }
 }
 
-class Fixed extends Component {
+export default class Fixed extends Component {
     render() {
         return (
             <View style={[this.props.style, styles.fixedContainer]}>
@@ -112,5 +112,3 @@ class Fixed extends Component {
         );
     }
 }
-
-module.exports = Fixed;

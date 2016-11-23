@@ -6,12 +6,6 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 const TabNavigatorItem = TabNavigator.Item;
 
-import MessagePage from './messages';
-import DingPage from './ding';
-import WorkPage from './work';
-import ContactsPage from './contacts';
-import MinePage from './mine';
-
 const styles = StyleSheet.create({
     title: {color: '#000000'},
     selectedTitle: {color: '#999'},
@@ -42,65 +36,29 @@ const styles = StyleSheet.create({
     }
 });
 
-var barTabItems = {
-    initItem: {tabId: 'msg'},
-    items: [
-        {
-            tabId: 'msg',
-            title: '消息',
-            icon: require('../../../assets/img/msg_64x64.png'),
-            selectedIcon: require('../../../assets/img/msg_blue_64x64.png'),
-            tabPageClass: MessagePage,
-            tabPageProps: [],
-            eventCount: 0
-        },
-        {
-            tabId: 'ding',
-            title: 'DING',
-            icon: require('../../../assets/img/ding_64x64.png'),
-            selectedIcon: require('../../../assets/img/ding_blue_64x64.png'),
-            tabPageClass: DingPage,
-            tabPageProps: [],
-            eventCount: 1
-        },
-        {
-            tabId: 'work',
-            title: '工作',
-            icon: require('../../../assets/img/work_64x64.png'),
-            selectedIcon: require('../../../assets/img/work_blue_64x64.png'),
-            tabPageClass: WorkPage,
-            tabPageProps: [{naviBarHeight: 50}],
-            eventCount: 0
-        },
-        {
-            tabId: 'contacts',
-            title: '联系人',
-            icon: require('../../../assets/img/contacts_64x64.png'),
-            selectedIcon: require('../../../assets/img/contacts_blue_64x64.png'),
-            tabPageClass: ContactsPage,
-            tabPageProps: [],
-            eventCount: 0
-        },
-        {
-            tabId: 'mine',
-            title: '我的',
-            icon: require('../../../assets/img/mine_64x64.png'),
-            selectedIcon: require('../../../assets/img/mine_blue_64x64.png'),
-            tabPageClass: MinePage,
-            tabPageProps: [],
-            eventCount: 0
-        }
-    ]
-};
+import MessagePage from './messages';
+import DingPage from './ding';
+import WorkPage from './work';
+import ContactsPage from './contacts';
+import MinePage from './mine';
 
-class BottomNaviPage extends Component {
+export default class BottomNaviPage extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: barTabItems.initItem.tabId,
+            selectedTab: 'msg',
             tabBarShow: true
         }
+    }
+
+    componentDidMount() {
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        // TODO: return whether or not current chat thread is different to former one.
+        // 根据实际情况判断当前帖子的状态是否和之前不同
+        return true;
     }
 
     hide() {
@@ -148,6 +106,61 @@ class BottomNaviPage extends Component {
     }
 
     _getItems() {
+        var barTabItems = {
+            initItem: {tabId: 'msg'},
+            items: [
+                {
+                    tabId: 'msg',
+                    title: '消息',
+                    icon: require('../../../assets/img/msg_64x64.png'),
+                    selectedIcon: require('../../../assets/img/msg_blue_64x64.png'),
+                    tabPageClass: MessagePage,
+                    tabPageProps: {},
+                    eventCount: 0
+                },
+                {
+                    tabId: 'ding',
+                    title: 'DING',
+                    icon: require('../../../assets/img/ding_64x64.png'),
+                    selectedIcon: require('../../../assets/img/ding_blue_64x64.png'),
+                    tabPageClass: DingPage,
+                    tabPageProps: {
+                        ding_unconfirmed: this.props.ding_unconfirmed,
+                        naviBarHeight: 50,
+                        onRefresh: this.props.onRefresh
+                    },
+                    eventCount: this.props.ding_unconfirmed
+                },
+                {
+                    tabId: 'work',
+                    title: '工作',
+                    icon: require('../../../assets/img/work_64x64.png'),
+                    selectedIcon: require('../../../assets/img/work_blue_64x64.png'),
+                    tabPageClass: WorkPage,
+                    tabPageProps: {naviBarHeight: 50},
+                    eventCount: 0
+                },
+                {
+                    tabId: 'contacts',
+                    title: '联系人',
+                    icon: require('../../../assets/img/contacts_64x64.png'),
+                    selectedIcon: require('../../../assets/img/contacts_blue_64x64.png'),
+                    tabPageClass: ContactsPage,
+                    tabPageProps: {},
+                    eventCount: 0
+                },
+                {
+                    tabId: 'mine',
+                    title: '我的',
+                    icon: require('../../../assets/img/mine_64x64.png'),
+                    selectedIcon: require('../../../assets/img/mine_blue_64x64.png'),
+                    tabPageClass: MinePage,
+                    tabPageProps: {},
+                    eventCount: 0
+                }
+            ]
+        };
+
         return barTabItems.items.map((tabItem)=> {
             let key = tabItem.tabId;
             if (this.props.key) {
@@ -182,5 +195,3 @@ class BottomNaviPage extends Component {
         );
     }
 }
-
-module.exports = BottomNaviPage;

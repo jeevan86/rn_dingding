@@ -57,7 +57,7 @@ class OtherItem extends Component {
     }
 }
 
-class Other extends Component {
+export default class Other extends Component {
     render() {
         return (
             <View style={[this.props.style, styles.otherContainer]}>
@@ -85,5 +85,3 @@ class Other extends Component {
         );
     }
 }
-
-module.exports = Other;
