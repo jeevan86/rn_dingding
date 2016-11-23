@@ -1,47 +1,45 @@
 'use strict'
 
 import React, {Component} from 'react';
+import {StyleSheet, View, Text, Image, TouchableOpacity, Alert} from 'react-native'
 
-import {View, Text, Image, TouchableOpacity, Alert} from 'react-native'
+let styles = StyleSheet.create({
+    sectionSearch: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+        height: 40,
+        borderBottomWidth: 1,
+        borderBottomColor: '#cccccc',
+        backgroundColor: '#FFF'
+    },
+    contentStyle: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+        backgroundColor: '#ccc',
+        width: 360,
+        height: 24,
+        borderRadius: 12,
+        opacity: .5
+    },
+    imageStyle: {width: 12, height: 12},
+    textStyle: {fontSize: 12}
+});
 
 export default class SearchBar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sectionSearch: {
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                alignSelf: 'center',
-                height: 40,
-                borderBottomWidth: 1,
-                borderBottomColor: '#cccccc',
-                backgroundColor: '#FFF'
-            },
-            contentStyle: {
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                alignSelf: 'center',
-                backgroundColor: '#ccc',
-                width: 360,
-                height: 24,
-                borderRadius: 12,
-                opacity: .5
-            }
-        }
-    }
-
     render() {
         return (
-            <View style={this.state.sectionSearch}>
+            <View style={styles.sectionSearch}>
                 <TouchableOpacity onPress={() => {
                     Alert.alert('点击了搜索栏');
                 }}>
-                    <View style={this.state.contentStyle}>
-                        <Image style={{width: 12, height: 12}}
+                    <View style={styles.contentStyle}>
+                        <Image style={styles.imageStyle}
                                source={require('../../assets/img/search_50x50.png')}/>
-                        <Text style={{fontSize: 12}}>{"  " + this.props.text}</Text>
+                        <Text style={styles.textStyle}>{"  " + this.props.text}</Text>
                     </View>
                 </TouchableOpacity>
             </View>

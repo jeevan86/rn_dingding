@@ -72,7 +72,8 @@ export default class dingService {
                     id: ++dingDataId,
                     icon: icons[Math.round(Math.random() * 10) % 6],
                     title: titles[Math.round(Math.random() * 10) % 6],
-                    content:contents[Math.round(Math.random() * 10) % 6],
+                    content: contents[Math.round(Math.random() * 10) % 6],
+                    created: '2016-11-' + Math.round(Math.random() * 100) % 30 + ' ' + Math.round(Math.random() * 100) % 24 + ':'+Math.round(Math.random() * 100) % 60
                 }
             );
         }
