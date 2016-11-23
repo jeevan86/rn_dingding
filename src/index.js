@@ -14,11 +14,11 @@ let store = createStore(DingReducers.dingReducer);
 
 //connecting
 let mapStateToProps = function (state) {
-    return state ? {ding_unconfirmed: state.ding_unconfirmed} : {ding_unconfirmed: 0};
+    return state ? {dingUnconfirmed: state.dingUnconfirmed} : {dingUnconfirmed: 0};
 };
 let mapDispatchToProps = function (dispatch) {
     return {
-        onRefresh: function (newData) {
+        onDingRefresh: function (newData) {
             dispatch(DingActions.newDingRetrieveUnconfirmedAction(newData.length));
         }
     };

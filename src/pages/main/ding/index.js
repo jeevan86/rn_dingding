@@ -44,7 +44,7 @@ export default class DingPage extends Component {
         super(props);
         this.state = {
             naviBarHeight: this.props.naviBarHeight || 50,
-            ding_unconfirmed: this.props.ding_unconfirmed
+            dingUnconfirmed: this.props.dingUnconfirmed
         };
     }
 
@@ -54,7 +54,7 @@ export default class DingPage extends Component {
             index: 0,
             component: DingList,
             title: DingList.title,
-            passProps: {ding_unconfirmed: this.props.ding_unconfirmed, onRefresh : this.props.onRefresh}
+            passProps: {dingUnconfirmed: this.props.dingUnconfirmed, onRefresh : this.props.onRefresh}
         };
     }
 

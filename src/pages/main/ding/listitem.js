@@ -104,7 +104,7 @@ export class DingMessageItem extends Component {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={{height: 10}}/>
+                <View style={{height: 6}}/>
             </View>
         );
     }

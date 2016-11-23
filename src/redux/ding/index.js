@@ -6,7 +6,7 @@ let newDingRetrieveUnconfirmedAction = function (count) {
     let action = {
         type: DING_RETRIEVE_UNCONFIRMED,
         payload: {
-            ding_unconfirmed: count
+            dingUnconfirmed: count
         }
     };
     return action;
@@ -16,7 +16,7 @@ let newDingRetrieveUnconfirmedAction = function (count) {
 let dingReducer = function (state, action) {
     switch (action.type) {
         case DING_RETRIEVE_UNCONFIRMED:
-            return {ding_unconfirmed: action.payload.ding_unconfirmed} //TODO: must be new Object, immutable.
+            return {dingUnconfirmed: action.payload.dingUnconfirmed} //TODO: must be new Object, immutable.
         default:
             return state;
     }
