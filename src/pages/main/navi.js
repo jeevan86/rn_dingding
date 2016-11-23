@@ -85,23 +85,27 @@ export default class BottomNaviPage extends Component {
             width: 40,
             height: 32,
             flexDirection: 'column',
-            justifyContent: 'flex-start'
+            alignItems: 'flex-end',
+            justifyContent: 'center'
         }}>
-            <View style={{
-                alignSelf: 'flex-end',
-                backgroundColor: 'red',
-                width: eventWidth,
-                height: 12,
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderRadius: 6,
-                opacity: eventOpacity
-            }}>
-                <Text style={{color: '#FFF', fontSize: 7, fontWeight: 'bold'}}>
-                    {eventText}
-                </Text>
+            <View style={{zIndex: 1}}>
+                <View style={[
+                    {
+                        backgroundColor: 'red',
+                        height: 12,
+                        borderRadius: 6,
+                        left: -3,
+                        top: 4,
+                        alignSelf: 'flex-end',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }, {width: eventWidth, opacity: eventOpacity}]}>
+                    <Text style={{color: '#FFF', fontSize: 7, fontWeight: 'bold'}}>
+                        {eventText}
+                    </Text>
+                </View>
             </View>
-            <Image source={source} style={style}/>
+            <Image source={source} style={[style, {zIndex: 0}]}/>
         </View>;
     }
 
