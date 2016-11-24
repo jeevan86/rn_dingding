@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 
 import {SearchBarItem, ConfirmButtonItem, DingMessageItem} from './listitem';
+import DingSearchPage from './search';
 import dingService from './service';
 
 var styles = StyleSheet.create({
@@ -124,9 +125,24 @@ export default class DingList extends Component {
         Alert.alert('点击了Item:{id:' + rowID + '}');
     }
 
+    _pressSearchBar() {
+        let navigator = this.props.navigator;
+        navigator.push(
+            {
+                name: DingSearchPage.title,
+                index: 0,
+                component: DingSearchPage,
+                title: DingSearchPage.title,
+                passProps: {}
+            }
+        );
+    }
+
     _getItem(rowData, sectionID, rowID, highlightRow) {
         if (rowID == 0) {
-            return <SearchBarItem style={styles.itemRow}/>;
+            return <SearchBarItem style={styles.itemRow} onPress={() => {
+                this._pressSearchBar();
+            }}/>;
         } else if (rowID == 1) {
             return <ConfirmButtonItem style={styles.itemRow} onPress={this._pressRow}
                                       count={this.state.dingData.length}/>;

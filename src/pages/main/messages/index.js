@@ -118,13 +118,15 @@ export default class MessagePage extends Component {
         }
     }
 
+    static route = {
+        name: 'MessageList',
+        index: 0,
+        component: MessageList,
+        title: '钉钉'
+    }
+
     render() {
-        let initialRoute = {
-            name: 'MessageList',
-            index: 0,
-            component: MessageList,
-            title: '钉钉'
-        };
+        let initialRoute = MessagePage.route;
         return (
             <Navigator initialRoute={initialRoute}
                        configureScene={(route) => {

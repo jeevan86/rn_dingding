@@ -9,8 +9,8 @@ const TabNavigatorItem = TabNavigator.Item;
 const naviBarHeight = 50;
 const itemWidth = 48, iconWidth = 24;
 const styles = StyleSheet.create({
-    title: {color: '#000000'},
-    selectedTitle: {color: '#999'},
+    title: {color: '#000000', fontWeight: 'bold'},
+    selectedTitle: {color: '#1E90FF', fontWeight: 'bold'},
     tabNav: {height: naviBarHeight},
     tabNavHide: {opacity: 0, zIndex: 0, width: 0, height: 0},
     item: {width: itemWidth, height: 32},
@@ -78,6 +78,13 @@ const barTabItems = {
 };
 
 export default class BottomNaviPage extends Component {
+
+    static route = {
+        name: 'BottomNaviPage',
+        index: 0,
+        component: BottomNaviPage,
+        title: ''
+    }
 
     constructor(props) {
         super(props);

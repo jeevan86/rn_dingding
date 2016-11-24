@@ -34,7 +34,11 @@ export default class SearchBar extends Component {
         return (
             <View style={styles.sectionSearch}>
                 <TouchableOpacity onPress={() => {
-                    Alert.alert('点击了搜索栏');
+                    if (this.props.onPress) {
+                        this.props.onPress();
+                    } else {
+                        Alert.alert('点击了搜索栏');
+                    }
                 }}>
                     <View style={styles.contentStyle}>
                         <Image style={styles.imageStyle}

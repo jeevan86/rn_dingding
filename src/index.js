@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import {createStore} from 'redux'
 import {Provider, connect} from 'react-redux'
 
-import BottomNaviPage from './pages/main/navi';
+import RootPage from './pages';
 
 import {DingActions, DingReducers} from './redux/ding';
 
@@ -26,7 +26,7 @@ let mapDispatchToProps = function (dispatch) {
 let AppRoot = connect(
     mapStateToProps,
     mapDispatchToProps
-)(BottomNaviPage);
+)(RootPage);
 
 //using
 export default class App extends Component {

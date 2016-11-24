@@ -47,7 +47,7 @@ let styles = StyleSheet.create({
 
 export class SearchBarItem extends Component {
     render() {
-        return <SearchBar style={styles.itemRow} text="搜索DING消息"/>;
+        return <SearchBar style={styles.itemRow} text="搜索DING消息" onPress={this.props.onPress}/>;
     }
 }
 
