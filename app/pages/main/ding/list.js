@@ -127,13 +127,18 @@ export default class DingList extends Component {
 
     _pressSearchBar() {
         let navigator = this.props.navigator;
+        let onPress = function () {
+            navigator.pop();
+        }
         navigator.push(
             {
                 name: DingSearchPage.title,
                 index: 0,
                 component: DingSearchPage,
                 title: DingSearchPage.title,
-                passProps: {}
+                left: DingSearchPage.left,
+                right: DingSearchPage.right,
+                passProps: {onPress: onPress}
             }
         );
     }

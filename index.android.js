@@ -7,14 +7,7 @@
 import React from 'react';
 import {Component} from 'react';
 import {AppRegistry} from 'react-native';
-import BottomNaviPage from './src/pages/main/index';
 
-export default class index extends Component {
-  render() {
-    return (
-        <BottomNaviPage />
-    );
-  }
-}
+import App from './app';
 
-AppRegistry.registerComponent('rn_dingding', () => index);
+AppRegistry.registerComponent('rn_dingding', () => App);

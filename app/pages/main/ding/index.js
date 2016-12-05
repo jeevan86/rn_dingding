@@ -54,7 +54,12 @@ export default class DingPage extends Component {
             index: 0,
             component: DingList,
             title: DingList.title,
-            passProps: {dingUnconfirmed: this.props.dingUnconfirmed, onRefresh : this.props.onRefresh}
+            left: '    左边    ',
+            right: '    右边    ',
+            passProps: {
+                dingUnconfirmed: this.props.dingUnconfirmed,
+                onRefresh: this.props.onRefresh
+            }
         };
     }
 
@@ -96,20 +101,34 @@ export default class DingPage extends Component {
     _navigationBar() {
         let naviBar = {
             LeftButton(route, navigator, index, navState) {
-                let titleStyle = [styles.naviBarItem];
-                let titleTextStyle = {fontSize: 14, color: 'blue'};
-                return <View style={titleStyle}><Text style={titleTextStyle}>{'   编辑   '}</Text></View>;
+                let left = route.left;
+                if (left && typeof left === 'string') {
+                    let titleStyle = [styles.naviBarItem];
+                    let titleTextStyle = {fontSize: 14, color: 'blue'};
+                    return <View style={titleStyle}><Text style={titleTextStyle}>{left}</Text></View>;
+                } else {
+                    return left;
+                }
             },
             Title(route, navigator, index, navState) {
-                let titleStyle = [{width: 200}, styles.naviBarItem];
-                let titleTextStyle = {fontSize: 14, color: '#444444'};
                 let title = route.title;
-                return <View style={titleStyle}><Text style={titleTextStyle}>{title}</Text></View>;
+                if (title && typeof title === 'string') {
+                    let titleStyle = [{width: 200}, styles.naviBarItem];
+                    let titleTextStyle = {fontSize: 14, color: '#444444'};
+                    return <View style={titleStyle}><Text style={titleTextStyle}>{title}</Text></View>;
+                } else {
+                    return title;
+                }
             },
             RightButton(route, navigator, index, navState) {
-                let titleStyle = [styles.naviBarItem];
-                let titleTextStyle = {fontSize: 14, color: 'blue'};
-                return <View style={titleStyle}><Text style={titleTextStyle}>{'   添加   '}</Text></View>;
+                let right = route.right;
+                if (right && typeof right === 'string') {
+                    let titleStyle = [styles.naviBarItem];
+                    let titleTextStyle = {fontSize: 14, color: 'blue'};
+                    return <View style={titleStyle}><Text style={titleTextStyle}>{right}</Text></View>;
+                } else {
+                    return right;
+                }
             }
         };
         let style = {backgroundColor: '#e1e1e1', height: this.state.naviBarHeight};

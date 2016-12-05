@@ -16,6 +16,11 @@ import {
 } from 'react-native';
 
 export default class DingSearchPage extends Component {
+
+    title = {
+
+    };
+
     constructor(props) {
         super(props);
         this.state = {
