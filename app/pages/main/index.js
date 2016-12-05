@@ -42,36 +42,36 @@ const barTabItems = {
         msg: {
             tabId: 'msg',
             title: '消息',
-            icon: require('../../../assets/img/msg_64x64.png'),
-            selectedIcon: require('../../../assets/img/msg_blue_64x64.png'),
+            icon: require('../../assets/img/msg_64x64.png'),
+            selectedIcon: require('../../assets/img/msg_blue_64x64.png'),
             tabPageClass: MessagePage
         },
         ding: {
             tabId: 'ding',
             title: 'DING',
-            icon: require('../../../assets/img/ding_64x64.png'),
-            selectedIcon: require('../../../assets/img/ding_blue_64x64.png'),
+            icon: require('../../assets/img/ding_64x64.png'),
+            selectedIcon: require('../../assets/img/ding_blue_64x64.png'),
             tabPageClass: DingPage
         },
         work: {
             tabId: 'work',
             title: '工作',
-            icon: require('../../../assets/img/work_64x64.png'),
-            selectedIcon: require('../../../assets/img/work_blue_64x64.png'),
+            icon: require('../../assets/img/work_64x64.png'),
+            selectedIcon: require('../../assets/img/work_blue_64x64.png'),
             tabPageClass: WorkPage
         },
         contacts: {
             tabId: 'contacts',
             title: '联系人',
-            icon: require('../../../assets/img/contacts_64x64.png'),
-            selectedIcon: require('../../../assets/img/contacts_blue_64x64.png'),
+            icon: require('../../assets/img/contacts_64x64.png'),
+            selectedIcon: require('../../assets/img/contacts_blue_64x64.png'),
             tabPageClass: ContactsPage
         },
         mine: {
             tabId: 'mine',
             title: '我的',
-            icon: require('../../../assets/img/mine_64x64.png'),
-            selectedIcon: require('../../../assets/img/mine_blue_64x64.png'),
+            icon: require('../../assets/img/mine_64x64.png'),
+            selectedIcon: require('../../assets/img/mine_blue_64x64.png'),
             tabPageClass: MinePage
         }
     }

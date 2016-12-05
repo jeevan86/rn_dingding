@@ -41,8 +41,8 @@ export default class Header extends Component {
                           width={400}
                           height={headerHeight}
                           indicatorOffset={120}>
-                    <HeaderItem image={require('../../../../assets/img/pict_work_01.jpg')} style={{height: headerHeight}}/>
-                    <HeaderItem image={require('../../../../assets/img/pict_work_01.jpg')} style={{height: headerHeight}}/>
+                    <HeaderItem image={require('../../../assets/img/pict_work_01.jpg')} style={{height: headerHeight}}/>
+                    <HeaderItem image={require('../../../assets/img/pict_work_01.jpg')} style={{height: headerHeight}}/>
                 </Carousel>
             </View>
         );

@@ -106,7 +106,7 @@ export default class WorkPage extends Component {
             LeftButton(route, navigator, index, navState) {
                 let btnStyle = [{width: 40}, styles.naviBarItem];
                 let btnOnPress = () => Alert.alert("点击了铃铛");
-                let icon = require('../../../../assets/img/icon_work_lingdang.png');
+                let icon = require('../../../assets/img/icon_work_lingdang.png');
                 let iconStyle = {width: 16, height: 18};
                 return (
                     <TouchableOpacity style={btnStyle} onPress={btnOnPress}>

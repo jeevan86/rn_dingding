@@ -57,7 +57,7 @@ class SectionMyInfo extends Component {
             <View style={[styles.section, styles.sectionMyInfo, {justifyContent: 'center'}, styles.flexRowCenter]}>
                 <TouchableOpacity style={styles.flexRowCenter}>
                     <View style={[{flex: 2, justifyContent: 'flex-start', paddingLeft: 10}, styles.flexRowCenter]}>
-                        <Image source={require('../../../../assets/img/avatar.png')}
+                        <Image source={require('../../../assets/img/avatar.png')}
                                style={{width: 48, height: 48, borderRadius: 24}}/>
                     </View>
                     <View style={[{flex: 11, justifyContent: 'flex-start'}, styles.flexRowCenter]}>
@@ -65,7 +65,7 @@ class SectionMyInfo extends Component {
                             <Text style={{opacity: .9, fontSize: 14}}>{'180****0695'}</Text>
                         </View>
                         <View style={[{flex: 1, justifyContent: 'flex-end'}, styles.flexRowCenter]}>
-                            <Image source={require('../../../../assets/img/icon_mine_info.png')}
+                            <Image source={require('../../../assets/img/icon_mine_info.png')}
                                    style={{width: 16, height: 16}}/>
                             <Text style={{opacity: .9, fontSize: 12}}>{'   >   '}</Text>
                         </View>
@@ -82,7 +82,7 @@ class SectionQiInfo extends Component {
             <View style={[styles.section, styles.sectionQiInfo, {justifyContent: 'center'}, styles.flexRowCenter]}>
                 <TouchableOpacity style={styles.flexRowCenter}>
                     <View style={[{flex: 1, justifyContent: 'flex-start', paddingLeft: 10}, styles.flexRowCenter]}>
-                        <Image source={require('../../../../assets/img/icon_mine_qi.png')}
+                        <Image source={require('../../../assets/img/icon_mine_qi.png')}
                                style={{width: 20, height: 20}}/>
 
                     </View>
@@ -109,7 +109,7 @@ class SectionMain extends Component {
             <View style={[styles.section, styles.sectionMain]}>
                 <View style={[styles.sectionLine, styles.flexRowCenter, styles.sectionLineRight]}>
                     <View style={[{flex: 1, justifyContent: 'flex-start', paddingLeft: 10}, styles.flexRowCenter]}>
-                        <Image source={require('../../../../assets/img/icon_mine_hongbao.png')}
+                        <Image source={require('../../../assets/img/icon_mine_hongbao.png')}
                                style={{width: 20, height: 20}}/>
                     </View>
                     <View style={[{flex: 10, justifyContent: 'flex-start'}, styles.flexRowCenter]}>
@@ -124,7 +124,7 @@ class SectionMain extends Component {
 
                 <View style={[styles.sectionLine, styles.flexRowCenter, styles.sectionLineRight]}>
                     <View style={[{flex: 1, justifyContent: 'flex-start', paddingLeft: 10}, styles.flexRowCenter]}>
-                        <Image source={require('../../../../assets/img/icon_mine_biaoqing.png')}
+                        <Image source={require('../../../assets/img/icon_mine_biaoqing.png')}
                                style={{width: 20, height: 20}}/>
                     </View>
                     <View style={[{flex: 10, justifyContent: 'flex-start'}, styles.flexRowCenter]}>
@@ -139,7 +139,7 @@ class SectionMain extends Component {
 
                 <View style={[styles.sectionLine, styles.flexRowCenter, styles.sectionLineRight]}>
                     <View style={[{flex: 1, justifyContent: 'flex-start', paddingLeft: 10}, styles.flexRowCenter]}>
-                        <Image source={require('../../../../assets/img/icon_mine_shoucang.png')}
+                        <Image source={require('../../../assets/img/icon_mine_shoucang.png')}
                                style={{width: 20, height: 20}}/>
                     </View>
                     <View style={[{flex: 10, justifyContent: 'flex-start'}, styles.flexRowCenter]}>
@@ -154,7 +154,7 @@ class SectionMain extends Component {
 
                 <View style={[styles.sectionLine, styles.flexRowCenter, styles.sectionLineRight]}>
                     <View style={[{flex: 1, justifyContent: 'flex-start', paddingLeft: 10}, styles.flexRowCenter]}>
-                        <Image source={require('../../../../assets/img/icon_mine_fulishe.png')}
+                        <Image source={require('../../../assets/img/icon_mine_fulishe.png')}
                                style={{width: 20, height: 20}}/>
                     </View>
                     <View style={[{flex: 10, justifyContent: 'flex-start'}, styles.flexRowCenter]}>
@@ -177,7 +177,7 @@ class SectionOther extends Component {
             <View style={[styles.section, styles.sectionOther]}>
                 <View style={[styles.sectionLine, styles.flexRowCenter, styles.sectionLineRight]}>
                     <View style={[{flex: 1, justifyContent: 'flex-start', paddingLeft: 10}, styles.flexRowCenter]}>
-                        <Image source={require('../../../../assets/img/icon_mine_fuwuzhongxin.png')}
+                        <Image source={require('../../../assets/img/icon_mine_fuwuzhongxin.png')}
                                style={{width: 20, height: 20}}/>
                     </View>
                     <View style={[{flex: 10, justifyContent: 'flex-start'}, styles.flexRowCenter]}>
@@ -192,7 +192,7 @@ class SectionOther extends Component {
 
                 <View style={[styles.sectionLine, styles.flexRowCenter, styles.sectionLineRight]}>
                     <View style={[{flex: 1, justifyContent: 'flex-start', paddingLeft: 10}, styles.flexRowCenter]}>
-                        <Image source={require('../../../../assets/img/icon_mine_yaoqing.png')}
+                        <Image source={require('../../../assets/img/icon_mine_yaoqing.png')}
                                style={{width: 20, height: 20}}/>
                     </View>
                     <View style={[{flex: 10, justifyContent: 'flex-start'}, styles.flexRowCenter]}>
@@ -215,7 +215,7 @@ class SectionConfig extends Component {
             <View style={[styles.section, styles.sectionConfig]}>
                 <View style={[styles.sectionLine, styles.flexRowCenter, styles.sectionLineRight]}>
                     <View style={[{flex: 1, justifyContent: 'flex-start', paddingLeft: 10}, styles.flexRowCenter]}>
-                        <Image source={require('../../../../assets/img/icon_mine_shezhi.png')}
+                        <Image source={require('../../../assets/img/icon_mine_shezhi.png')}
                                style={{width: 20, height: 20}}/>
                     </View>
                     <View style={[{flex: 10, justifyContent: 'flex-start'}, styles.flexRowCenter]}>

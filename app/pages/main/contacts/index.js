@@ -71,7 +71,7 @@ class SectionSearch extends Component {
                 }}>
                     <View style={contentStyle}>
                         <Image style={{width: 12, height: 12}}
-                               source={require('../../../../assets/img/search_50x50.png')}/>
+                               source={require('../../../assets/img/search_50x50.png')}/>
                         <Text style={{fontSize: 12}}>{"  找人"}</Text>
                     </View>
                 </TouchableOpacity>
@@ -91,7 +91,7 @@ class SectionCatalog extends Component {
             <View style={[styles.section, styles.sectionCatalog]}>
                 <View style={sectionLineStyle}>
                     <View style={iconContainerStyle}>
-                        <Image source={require('../../../../assets/img/icon_contacts_ddhaoyou.png')} style={iconStyle}/>
+                        <Image source={require('../../../assets/img/icon_contacts_ddhaoyou.png')} style={iconStyle}/>
                     </View>
                     <View style={textContainerStyle}>
                         <Text style={textStyle}>{'钉钉好友'}</Text>
@@ -100,7 +100,7 @@ class SectionCatalog extends Component {
 
                 <View style={sectionLineStyle}>
                     <View style={iconContainerStyle}>
-                        <Image source={require('../../../../assets/img/icon_contacts_shoujitongxun.png')}
+                        <Image source={require('../../../assets/img/icon_contacts_shoujitongxun.png')}
                                style={iconStyle}/>
                     </View>
                     <View style={textContainerStyle}>
@@ -110,7 +110,7 @@ class SectionCatalog extends Component {
 
                 <View style={sectionLineStyle}>
                     <View style={iconContainerStyle}>
-                        <Image source={require('../../../../assets/img/icon_contacts_wodequnzu.png')}
+                        <Image source={require('../../../assets/img/icon_contacts_wodequnzu.png')}
                                style={iconStyle}/>
                     </View>
                     <View style={textContainerStyle}>
@@ -120,7 +120,7 @@ class SectionCatalog extends Component {
 
                 <View style={sectionLineStyle}>
                     <View style={iconContainerStyle}>
-                        <Image source={require('../../../../assets/img/icon_contacts_fuwuchuang.png')}
+                        <Image source={require('../../../assets/img/icon_contacts_fuwuchuang.png')}
                                style={iconStyle}/>
                     </View>
                     <View style={textContainerStyle}>
@@ -142,12 +142,12 @@ class SectionOrganization extends Component {
             <View style={[styles.section, styles.sectionOrganization, styles.flexRowCenter]}>
                 <TouchableOpacity style={styles.flexRowCenter}>
                     <View style={iconContainerStyle}>
-                        <Image source={require('../../../../assets/img/icon_contacts_zuzhi.png')} style={iconStyle}/>
+                        <Image source={require('../../../assets/img/icon_contacts_zuzhi.png')} style={iconStyle}/>
                     </View>
                     <View style={textContainerStyle}>
                         <View style={[{flex: 2, justifyContent: 'flex-start'}, styles.flexRowCenter]}>
                             <Text style={textStyle}>{'蚂蚁金融服务股份有限公司'}</Text>
-                            <Image source={require('../../../../assets/img/icon_contacts_gou.png')}
+                            <Image source={require('../../../assets/img/icon_contacts_gou.png')}
                                    style={{width: 16, height: 16}}/>
                         </View>
                         <View style={[{flex: 1, justifyContent: 'flex-end'}, styles.flexRowCenter]}>
@@ -170,7 +170,7 @@ class SectionCreateTeam extends Component {
             <View style={[styles.section, styles.sectionOrganization, styles.flexRowCenter]}>
                 <TouchableOpacity style={styles.flexRowCenter}>
                     <View style={iconContainerStyle}>
-                        <Image source={require('../../../../assets/img/icon_contacts_chuangjian.png')}
+                        <Image source={require('../../../assets/img/icon_contacts_chuangjian.png')}
                                style={iconStyle}/>
                     </View>
                     <View style={textContainerStyle}>
@@ -194,7 +194,7 @@ class SectionCommon extends Component {
             <View style={[styles.section, styles.sectionOrganization, styles.flexRowCenter]}>
                 <TouchableOpacity style={styles.flexRowCenter}>
                     <View style={iconContainerStyle}>
-                        <Image source={require('../../../../assets/img/icon_contacts_changyong.png')}
+                        <Image source={require('../../../assets/img/icon_contacts_changyong.png')}
                                style={iconStyle}/>
                     </View>
                     <View style={textContainerStyle}>

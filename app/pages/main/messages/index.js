@@ -50,7 +50,7 @@ var NavigationBarRouteMapper = {
                 <TouchableOpacity style={[{width: 40}, styles.naviBarItem]}
                                   onPress={() => Alert.alert("点击了密")}>
                     <Image style={{width: 20, height: 20}}
-                           source={require('../../../../assets/img/mi.png')}/>
+                           source={require('../../../assets/img/mi.png')}/>
                 </TouchableOpacity>
             );
         }
@@ -78,7 +78,7 @@ var NavigationBarRouteMapper = {
                                           alignItems: 'flex-start'
                                       }}>
                         <Image style={{width: 20, height: 20}}
-                               source={require('../../../../assets/img/phone.png')}/>
+                               source={require('../../../assets/img/phone.png')}/>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Alert.alert("点击了+")}
                                       style={{
@@ -86,7 +86,7 @@ var NavigationBarRouteMapper = {
                                           alignItems: 'flex-end'
                                       }}>
                         <Image style={{marginRight: 10, width: 20, height: 20}}
-                               source={require('../../../../assets/img/plus.png')}/>
+                               source={require('../../../assets/img/plus.png')}/>
                     </TouchableOpacity>
                 </View>);
         }

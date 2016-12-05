@@ -87,7 +87,7 @@ export class DingMessageItem extends Component {
                         </View>
                         <Text style={{flex: 20, fontSize: 10}}>{rowData.created}</Text>
                         <View style={{flex: 1, alignSelf: 'flex-start'}}>
-                            <Image source={require('../../../../assets/img/icon_ding_ding.png')}
+                            <Image source={require('../../../assets/img/icon_ding_ding.png')}
                                    style={{width: 10, height: 10, borderRadius: 0, opacity: 1}}/>
                         </View>
                     </View>

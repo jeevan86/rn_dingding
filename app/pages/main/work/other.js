@@ -70,16 +70,16 @@ export default class Other extends Component {
                 }}><Text style={[styles.otherTitleText, {paddingLeft: 10}]}>{"其他应用"}</Text>
                 </View>
                 <View style={[styles.otherRow, styles.borderTop]}>
-                    <OtherItem text={"Tower任务"} icon={require('../../../../assets/img/icon_work_towerrenwu.png')}/>
-                    <OtherItem text={"易快报销"} icon={require('../../../../assets/img/icon_work_yikuaibaoxiao.png')}/>
-                    <OtherItem text={"微社区"} icon={require('../../../../assets/img/icon_work_weishequ.png')}/>
-                    <OtherItem text={"轻松小秘"} icon={require('../../../../assets/img/icon_work_qingsongxiaomi.png')}/>
+                    <OtherItem text={"Tower任务"} icon={require('../../../assets/img/icon_work_towerrenwu.png')}/>
+                    <OtherItem text={"易快报销"} icon={require('../../../assets/img/icon_work_yikuaibaoxiao.png')}/>
+                    <OtherItem text={"微社区"} icon={require('../../../assets/img/icon_work_weishequ.png')}/>
+                    <OtherItem text={"轻松小秘"} icon={require('../../../assets/img/icon_work_qingsongxiaomi.png')}/>
                 </View>
                 <View style={[styles.otherRow, styles.borderBottom]}>
-                    <OtherItem text={"考勤打卡"} icon={require('../../../../assets/img/icon_work_kaoqindaka.png')}/>
-                    <OtherItem text={"全部"} icon={require('../../../../assets/img/icon_work_quanbu.png')}/>
-                    <OtherItem text={"..."} icon={require('../../../../assets/img/icon_work_towerrenwu.png')}/>
-                    <OtherItem text={"..."} icon={require('../../../../assets/img/icon_work_towerrenwu.png')}/>
+                    <OtherItem text={"考勤打卡"} icon={require('../../../assets/img/icon_work_kaoqindaka.png')}/>
+                    <OtherItem text={"全部"} icon={require('../../../assets/img/icon_work_quanbu.png')}/>
+                    <OtherItem text={"..."} icon={require('../../../assets/img/icon_work_towerrenwu.png')}/>
+                    <OtherItem text={"..."} icon={require('../../../assets/img/icon_work_towerrenwu.png')}/>
                 </View>
             </View>
         );

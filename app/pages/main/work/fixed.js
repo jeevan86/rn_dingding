@@ -106,8 +106,8 @@ export default class Fixed extends Component {
             <View style={[this.props.style, styles.fixedContainer]}>
                 <FixedNumItem text={"待我审批"} value={0}/>
                 <FixedNumItem text={"出勤天数"} value={0}/>
-                <FixedIconItem text={"请假"} icon={require('../../../../assets/img/icon_work_qingjia.png')}/>
-                <FixedIconItem text={"日报"} icon={require('../../../../assets/img/icon_work_ribao.png')}/>
+                <FixedIconItem text={"请假"} icon={require('../../../assets/img/icon_work_qingjia.png')}/>
+                <FixedIconItem text={"日报"} icon={require('../../../assets/img/icon_work_ribao.png')}/>
             </View>
         );
     }

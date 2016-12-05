@@ -81,7 +81,7 @@ class LoginPage extends Component {
                     backgroundColor: '#ECEDF1',
                     justifyContent: 'center'
                 }}>
-                    <Image source={require('../../../assets/img/avatar.png')} style={{
+                    <Image source={require('../../assets/img/avatar.png')} style={{
                         width: 80,
                         height: 80,
                         alignSelf: 'center',

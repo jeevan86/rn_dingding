@@ -42,7 +42,7 @@ export default class SearchBar extends Component {
                 }}>
                     <View style={styles.contentStyle}>
                         <Image style={styles.imageStyle}
-                               source={require('../../assets/img/search_50x50.png')}/>
+                               source={require('../assets/img/search_50x50.png')}/>
                         <Text style={styles.textStyle}>{"  " + this.props.text}</Text>
                     </View>
                 </TouchableOpacity>

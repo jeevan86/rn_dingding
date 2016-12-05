@@ -8,6 +8,6 @@ import React from 'react';
 import {Component} from 'react';
 import {AppRegistry} from 'react-native';
 
-import App from './src';
+import App from './app';
 
 AppRegistry.registerComponent('rn_dingding', () => App);

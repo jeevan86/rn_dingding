@@ -128,7 +128,7 @@ class LoginPage extends Component {
                     <Text style={styles.headtitle}>添加账号</Text>
                 </View>
                 <View style={styles.avatarview}>
-                    <Image source={require('../../../assets/img/avatar.png')} style={styles.avatarimage}/>
+                    <Image source={require('../../assets/img/avatar.png')} style={styles.avatarimage}/>
                 </View>
                 <View style={styles.inputview}>
                     <TextInput underlineColorAndroid='transparent' style={styles.textinput} placeholder='QQ号/手机号/邮箱'/>

@@ -16,7 +16,7 @@ export default class SplashScreen extends Component {
     }
 
     render() {
-        return <Image source={require('../../../assets/img/splash.png') }
+        return <Image source={require('../../assets/img/splash.png') }
                       style={{
                           flex: 1,
                           justifyContent: 'center',

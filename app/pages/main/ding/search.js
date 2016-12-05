@@ -59,7 +59,7 @@ export default class DingSearchPage extends Component {
                     alignItems: 'center',
                     paddingLeft: 4
                 }}>
-                    <Image source={require('../../../../assets/img/search_50x50.png')}
+                    <Image source={require('../../../assets/img/search_50x50.png')}
                            style={{width: 10, height: 10}}/>
                     <View style={{width: 4}}/>
                     <TextInput style={{height: 24, width: 232, fontSize: 14}}
