@@ -22,12 +22,11 @@ let dingReducer = function (state, action) {
     }
 };
 
-module.exports = {
-    DingActions: {
-        DING_RETRIEVE_UNCONFIRMED: DING_RETRIEVE_UNCONFIRMED,
-        newDingRetrieveUnconfirmedAction: newDingRetrieveUnconfirmedAction
-    },
-    DingReducers: {
-        dingReducer: dingReducer
-    }
-}
+export const DingActions = {
+    DING_RETRIEVE_UNCONFIRMED: DING_RETRIEVE_UNCONFIRMED,
+    newDingRetrieveUnconfirmedAction: newDingRetrieveUnconfirmedAction
+};
+
+export const DingReducers = {
+    dingReducer: dingReducer
+};

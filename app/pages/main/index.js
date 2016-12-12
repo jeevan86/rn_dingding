@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
@@ -84,7 +84,7 @@ export default class BottomNaviPage extends Component {
         index: 0,
         component: BottomNaviPage,
         title: ''
-    }
+    };
 
     constructor(props) {
         super(props);

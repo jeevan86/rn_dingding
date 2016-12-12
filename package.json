@@ -5,13 +5,14 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "run-ios" : "react-native run-ios",
-    "run-android" : "react-native run-android"
+    "run-ios": "react-native run-ios",
+    "run-android": "react-native run-android"
   },
   "dependencies": {
     "react": "15.3.2",
     "react-native": "0.37.0",
     "react-native-carousel": "^0.10.0",
+    "react-native-root-toast": "^1.0.3",
     "react-native-tab-navigator": "^0.3.3",
     "react-redux": "^4.4.6",
     "redux": "^3.6.0"
@@ -25,6 +26,12 @@
     "jest": "17.0.0",
     "jest-react-native": "17.0.0",
     "react-test-renderer": "15.3.2",
-    "redux-devtools": "^3.3.1"
+    "redux-devtools": "^3.3.1",
+    "eslint": "^3.6.0",
+    "eslint-config-airbnb": "^11.2.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0"
   }
 }

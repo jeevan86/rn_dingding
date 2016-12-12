@@ -36,8 +36,6 @@ var styles = StyleSheet.create({
 });
 
 class WorkAppList extends Component {
-    static title = '福建富士通信息软件有限公司';
-
     render() {
         return (
             <ScrollView contentInset={{top: 0}}

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import React, {Component} from 'react';
 
@@ -47,7 +47,7 @@ class CommonItem extends Component {
                 <TouchableOpacity
                     underlayColor='transparent'
                     onPress={() => {
-                        Alert.alert('test')
+                        Alert.alert('test');
                     }}>
                     <Image source={this.props.icon} style={{width: 36, height: 36}}/>
                 </TouchableOpacity>
@@ -67,19 +67,19 @@ export default class Common extends Component {
                     alignItems: 'center',
                     alignSelf: 'center',
                     height: 24
-                }}><Text style={[styles.commonTitleText, {paddingLeft: 10}]}>{"常用应用"}</Text>
+                }}><Text style={[styles.commonTitleText, {paddingLeft: 10}]}>{'常用应用'}</Text>
                 </View>
                 <View style={[styles.commonRow, styles.borderTop]}>
-                    <CommonItem text={"钉盘"} icon={require('../../../assets/img/icon_work_dingpan.png')}/>
-                    <CommonItem text={"钉邮"} icon={require('../../../assets/img/icon_work_dingyou.png')}/>
-                    <CommonItem text={"管理日历"} icon={require('../../../assets/img/icon_work_guanlirili.png')}/>
-                    <CommonItem text={"签到"} icon={require('../../../assets/img/icon_work_qiandao.png')}/>
+                    <CommonItem text={'钉盘'} icon={require('../../../assets/img/icon_work_dingpan.png')}/>
+                    <CommonItem text={'钉邮'} icon={require('../../../assets/img/icon_work_dingyou.png')}/>
+                    <CommonItem text={'管理日历'} icon={require('../../../assets/img/icon_work_guanlirili.png')}/>
+                    <CommonItem text={'签到'} icon={require('../../../assets/img/icon_work_qiandao.png')}/>
                 </View>
                 <View style={[styles.commonRow, styles.borderBottom]}>
-                    <CommonItem text={"审批"} icon={require('../../../assets/img/icon_work_shenpi.png')}/>
-                    <CommonItem text={"公告"} icon={require('../../../assets/img/icon_work_gonggao.png')}/>
-                    <CommonItem text={"钉钉体验站"} icon={require('../../../assets/img/icon_work_dingdingtiyanzhan.png')}/>
-                    <CommonItem text={"日志"} icon={require('../../../assets/img/icon_work_rizhi.png')}/>
+                    <CommonItem text={'审批'} icon={require('../../../assets/img/icon_work_shenpi.png')}/>
+                    <CommonItem text={'公告'} icon={require('../../../assets/img/icon_work_gonggao.png')}/>
+                    <CommonItem text={'钉钉体验站'} icon={require('../../../assets/img/icon_work_dingdingtiyanzhan.png')}/>
+                    <CommonItem text={'日志'} icon={require('../../../assets/img/icon_work_rizhi.png')}/>
                 </View>
             </View>
         );

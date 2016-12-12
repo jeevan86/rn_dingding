@@ -1,3 +1,5 @@
+'use strict';
+
 import React, {Component} from 'react';
 
 import {View, Navigator, Text, TouchableOpacity, Image, StyleSheet, Alert} from 'react-native';
@@ -22,9 +24,9 @@ export default class More extends Component {
                 <TouchableOpacity
                     underlayColor='transparent'
                     onPress={() => {
-                        Alert.alert('test')
+                        Alert.alert('test');
                     }}>
-                    <Text style={[styles.moreText, {paddingRight: 10}]}>{"  查看更多 ...  "}</Text>
+                    <Text style={[styles.moreText, {paddingRight: 10}]}>{'  查看更多 ...  '}</Text>
                 </TouchableOpacity>
             </View>
         );

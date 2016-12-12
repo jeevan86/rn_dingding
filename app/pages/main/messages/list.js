@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import React, {Component} from 'react';
 
@@ -116,7 +116,7 @@ export default class MessageList extends Component {
                     </View>
                 </TouchableOpacity>);
         } else {
-            return <SearchBar text={"搜索"}/>
+            return <SearchBar text={'搜索'}/>;
         }
     }
 

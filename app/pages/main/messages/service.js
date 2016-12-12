@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var messageData = [
     {
@@ -34,7 +34,7 @@ var messageData = [
 ];
 
 export default class messageService {
-    static getMessageData = function () {
+    static getMessageData() {
         return messageData;
     }
-};
+}

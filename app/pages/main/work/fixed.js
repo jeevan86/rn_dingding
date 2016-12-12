@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity, Alert} from 'react-native';
@@ -39,7 +39,7 @@ class FixedIconItem extends Component {
                     <TouchableOpacity
                         underlayColor='transparent'
                         onPress={() => {
-                            Alert.alert('test')
+                            Alert.alert('test');
                         }}>
                         <Image source={this.props.icon} style={{width: 20, height: 20}}/>
                     </TouchableOpacity>
@@ -63,7 +63,7 @@ class FixedNumItem extends Component {
                 <TouchableOpacity
                     underlayColor='transparent'
                     onPress={() => {
-                        Alert.alert('test')
+                        Alert.alert('test');
                     }}>
                     <View style={{
                         width: 36,
@@ -104,10 +104,10 @@ export default class Fixed extends Component {
     render() {
         return (
             <View style={[this.props.style, styles.fixedContainer]}>
-                <FixedNumItem text={"待我审批"} value={0}/>
-                <FixedNumItem text={"出勤天数"} value={0}/>
-                <FixedIconItem text={"请假"} icon={require('../../../assets/img/icon_work_qingjia.png')}/>
-                <FixedIconItem text={"日报"} icon={require('../../../assets/img/icon_work_ribao.png')}/>
+                <FixedNumItem text={'待我审批'} value={0}/>
+                <FixedNumItem text={'出勤天数'} value={0}/>
+                <FixedIconItem text={'请假'} icon={require('../../../assets/img/icon_work_qingjia.png')}/>
+                <FixedIconItem text={'日报'} icon={require('../../../assets/img/icon_work_ribao.png')}/>
             </View>
         );
     }

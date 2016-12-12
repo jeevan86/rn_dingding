@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
 import React, {Component} from 'react';
 
-import {createStore} from 'redux'
-import {Provider, connect} from 'react-redux'
+import {createStore} from 'redux';
+import {Provider, connect} from 'react-redux';
 
 import RootPage from './pages';
 
